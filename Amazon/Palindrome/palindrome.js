@@ -1,13 +1,12 @@
-isPalindrome = function(num) {
-    if (num < 0) return false;
-    return num === reverse(num);
-}  
+var isPalindrome = function(x) {
+    var reverse = 0;
+    var copy = x;
 
-reverse = function(num) {
-    var reversed = 0;
-    while (num > 0) {
-        reversed = (reversed * 10) + (num % 10);
-        num = Math.floor(num / 10);
+    while (copy > 0) {
+      const digit = copy % 10;
+      reverse = reverse * 10 + digit;
+      copy = (copy / 10);
     }
-    return reversed;
-}
+
+    return reverse == x;
+};
